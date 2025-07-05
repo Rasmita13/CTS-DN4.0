@@ -12,6 +12,12 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 List<Employee> getEmployeesWithSalaryAbove(@Param("minSalary") Double minSalary);
 @Query("SELECT e FROM Employee e WHERE e.department.name = :deptName")
 List<Employee> getEmployeesByDepartment(@Param("deptName") String departmentName);
+@Query(name = "Employee.findByExactName")
+List<Employee> findByExactName(@Param("name") String name);
+@Query(name = "Employee.findAllSortedBySalary")
+List<Employee> findAllSortedBySalary();
+
+
 
 
 
