@@ -1,1 +1,45 @@
-
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--  Skills  -->
+<list id="skills">
+<value>Java</value>
+<value>Spring</value>
+<value>Angular</value>
+<value>SQL</value>
+</list>
+<!--  Employees  -->
+<bean id="employee1" class="com.example.employees.model.Employee">
+<constructor-arg value="1"/>
+<constructor-arg value="Alice"/>
+<constructor-arg value="HR"/>
+<constructor-arg ref="skills"/>
+</bean>
+<bean id="employee2" class="com.example.employees.model.Employee">
+<constructor-arg value="2"/>
+<constructor-arg value="Bob"/>
+<constructor-arg value="Finance"/>
+<constructor-arg ref="skills"/>
+</bean>
+<bean id="employee3" class="com.example.employees.model.Employee">
+<constructor-arg value="3"/>
+<constructor-arg value="Charlie"/>
+<constructor-arg value="IT"/>
+<constructor-arg ref="skills"/>
+</bean>
+<bean id="employee4" class="com.example.employees.model.Employee">
+<constructor-arg value="4"/>
+<constructor-arg value="Diana"/>
+<constructor-arg value="IT"/>
+<constructor-arg ref="skills"/>
+</bean>
+<!--  Employee List  -->
+<bean id="employeeDao" class="com.example.employees.dao.EmployeeDao">
+<constructor-arg>
+<list>
+<ref bean="employee1"/>
+<ref bean="employee2"/>
+<ref bean="employee3"/>
+<ref bean="employee4"/>
+</list>
+</constructor-arg>
+</bean>
+</beans>
