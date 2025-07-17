@@ -1,1 +1,14 @@
+<dependencies>
+    <!-- Spring Cloud Gateway -->
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-gateway</artifactId>
+    </dependency>
 
+    <!-- Resilience4j Spring Boot Starter -->
+    <dependency>
+        <groupId>io.github.resilience4j</groupId>
+        <artifactId>resilience4j-spring-boot3</artifactId> <!-- For Spring Boot 3 -->
+    </dependency>
+
+    
